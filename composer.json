@@ -7,7 +7,9 @@
       "data",
       "viet nam",
       "laravel",
-      "php"
+      "php",
+      "Bui Huy Cuong",
+      "laravel faker"
     ],
     "license": "MIT",
     "homepage": "https://github.com/BuiHuyCuong/VNFaker",
@@ -17,7 +19,6 @@
             "email": "buihuycuong1510@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
     "require": {},
     "extra": {
         "laravel": {
@@ -32,9 +33,6 @@
     "autoload": {
         "psr-4": {
             "Buihuycuong\\Vnfaker\\": "src"
-        },
-        "files": [
-            "src/helpers.php"
-        ]
+        }
     }
 }
