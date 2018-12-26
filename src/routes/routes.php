@@ -2,5 +2,6 @@
 
 Route::get('vnfaker', function() {
 	// test something here...
-	echo vnfaker()->colorName();
+	// print_r(vnfaker()->city(true));
+	echo vnfaker()->fullname();
 });

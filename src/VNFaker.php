@@ -5,24 +5,33 @@ namespace Buihuycuong\Vnfaker;
 class VNFaker 
 {
 
-	const FILE_PATH_FOLDER = '/files';
-	const FILE_FIRST_NAME_1 = 'firstname_1.txt';
-	const FILE_FIRST_NAME_2 = 'firstname_2.txt';
-	const FILE_LAST_NAME = 'lastname.txt';
-	const FILE_MID_NAME = 'midname.txt';
-	const FILE_CITY = 'city.txt';
+	const FILE_PATH_FOLDER     = '/files';
+	const FILE_FIRST_NAME_1    = 'firstname_1.txt';
+	const FILE_FIRST_NAME_2    = 'firstname_2.txt';
+	const FILE_LAST_NAME       = 'lastname.txt';
+	const FILE_MID_NAME        = 'midname.txt';
+	const FILE_CITY            = 'city.txt';
 
-	const FOLDER_PHONE = 'phone';
-	const FILE_MOBILE_PHONE = 'mobile.txt';
+	const FOLDER_PHONE         = 'phone';
+	const FILE_MOBILE_PHONE    = 'mobile.txt';
 	const FILE_PHONE_CODE_CITY = 'code_cities.txt';
-	const FILE_PHONE_FIX = 'tele.txt';
+	const FILE_PHONE_FIX       = 'tele.txt';
 
-	const FILE_COLOR_NAME = 'color_name.txt';
+	const FILE_COLOR_NAME      = 'color_name.txt';
+
+	const FOLDER_STRING        = 'string';
+	const FILE_WORD            = 'word.txt';
+	const FILE_SENTENCE        = 'sentence.txt';
+	const FILE_PARAGRAPH       = 'paragraph.txt';
+	const FOLDER_JSON          = 'json';
 
 	public function __construct() {
 		// Do something here
 	}
 
+	/*
+	* read file
+	*/
 	public static function readfile($file_path, $permission = 'r') {
 		$content_arrs = [];
 		$file = fopen( __DIR__.self::FILE_PATH_FOLDER.'/'.$file_path, $permission);
@@ -39,7 +48,18 @@ class VNFaker
 	/**
      * @return string
      */
-	public static function array_rand(array $items) {
+	public static function array_rand(array $items, $num = 1, $array = false, $glue = ',') {
+		$return_value = false;
+		if($num > 1) {
+			for($i = 0; $i < $num; $i++) {
+				$return_value[] = $items[array_rand($items)];
+			}
+
+			if($array) {
+				return $return_value;
+			}
+			return implode($glue, $return_value);
+		}
 		return $items[array_rand($items)];
 	}
 
@@ -156,11 +176,11 @@ class VNFaker
 	*/
 	public static function generateOrderNo($length = 6, $numbers = false, $letters = false, $uppercase = false, $lowercase = false)
 	{
-	    $token = "";
-	    $codeAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	    $codeAlphabet .= "abcdefghijklmnopqrstuvwxyz";
-	    $codeAlphabet .= "0123456789";
-	    $max = strlen($codeAlphabet);
+	    $token          = "";
+	    $codeAlphabet   = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	    $codeAlphabet  .= "abcdefghijklmnopqrstuvwxyz";
+	    $codeAlphabet  .= "0123456789";
+	    $max            = strlen($codeAlphabet);
 
 	    for ($i = 0; $i < $length; $i++) {
 	        $token .= $codeAlphabet[random_int(0, $max - 1)];
@@ -235,15 +255,18 @@ class VNFaker
 	* TEXT - STRING
 	*/
 	public static function paragraphs($paragraphs = 1, $wordInPara = 50) {
-		
+		$paragraphs = self::readfile(self::FOLDER_STRING.'/'.self::FILE_PARAGRAPH);
+		return self::array_rand($paragraphs);
 	}
 
 	public static function words($words = 10) {
-		
+		$words = self::readfile(self::FOLDER_STRING.'/'.self::FILE_WORD);
+		return self::array_rand($words);
 	}
 
 	public static function sentences($sentences = 1) {
-		
+		$sentences = self::readfile(self::FOLDER_STRING.'/'.self::FILE_SENTENCE);
+		return self::array_rand($sentences);
 	}
 
 	/*

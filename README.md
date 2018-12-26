@@ -26,8 +26,8 @@ vnfaker()->date();
 ```php
 vnfaker()->lastname(); // Bùi
 vnfaker()->midname(); // Huy
-vnfaker()->firstame(); // Cường
-vnfaker()->fullname(); // Bùi Huy Cường
+vnfaker()->firstname($word = 1); // 1:Cường, 2: Huy Cường
+vnfaker()->fullname($word = 3); // 3: Bùi Huy Cường, 4: Bùi Huy Hoàng Cường
 ```
 
 #### `Time`
@@ -96,6 +96,7 @@ vnfaker()->file($name = null, $extentions = 'png', $width = 100, $height = 100, 
 ```php
 vnfaker()->company(); //
 vnfaker()->gender(); // Nam | Nữ
+vnfaker()->array_rand(array $items, $num = 1, $array = false, $glue = ',');
 ```
 
 ### Change log
