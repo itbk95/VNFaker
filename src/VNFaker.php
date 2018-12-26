@@ -17,6 +17,8 @@ class VNFaker
 	const FILE_PHONE_CODE_CITY = 'code_cities.txt';
 	const FILE_PHONE_FIX = 'tele.txt';
 
+	const FILE_COLOR_NAME = 'color_name.txt';
+
 	public function __construct() {
 		// Do something here
 	}
@@ -110,9 +112,9 @@ class VNFaker
 		return mt_rand($min * $scale, $max * $scale) / $scale;
 	} 
 
-	public static function boolean($str = false) {
+	public static function boolean($string = false) {
 		$value = (bool)mt_rand(0,1);
-		if($str)
+		if($string)
 			return $value ? 'true':'false';
 		return $value;
 	} 
@@ -174,7 +176,7 @@ class VNFaker
 		return self::prefixPhone(self::FILE_MOBILE_PHONE).self::postfixPhone();
 	}
 
-	public static function telephone($numbers = 12) {
+	public static function fixedLineNumber($numbers = 12) {
 		return self::prefixPhone(self::FILE_PHONE_FIX).self::postfixPhone($numbers - 4);
 	}
 
@@ -187,7 +189,7 @@ class VNFaker
 		return self::array_rand($items);
 	}
 
-	public static function postfixPhone($count = 7) {
+	private static function postfixPhone($count = 7) {
 		$postfix = '';
 		$numbers = '0123456789';
 		for ($i = 0; $i < $count; $i++) {
@@ -214,9 +216,9 @@ class VNFaker
 	/**
      * ADDRESS
      */
-	public static function city($numbers = 1) {
+	public static function city($array = false) {
 		$items = self::readfile(self::FILE_CITY);
-		if(!$numbers) {
+		if($array) {
 			return $items;
 		}
 
@@ -232,15 +234,15 @@ class VNFaker
 	/*
 	* TEXT - STRING
 	*/
-	public static function paragraphs() {
+	public static function paragraphs($paragraphs = 1, $wordInPara = 50) {
 		
 	}
 
-	public static function words($numbers = 1) {
+	public static function words($words = 10) {
 		
 	}
 
-	public static function sentences($numbers = 1) {
+	public static function sentences($sentences = 1) {
 		
 	}
 
@@ -252,13 +254,15 @@ class VNFaker
 	}
 
 	public static function colorName() {
+		$colors = self::readfile(self::FILE_COLOR_NAME);
 
+		return self::array_rand($colors);
 	} 
 
 	/*
 	* file
 	*/
-	public static function file($name, $extentions = 'png', $width = 100, $height = 100, $mimeType = 'image') {
+	public static function file($name = null, $extentions = 'png', $width = 100, $height = 100, $mimeType = 'image') {
 
 	} 
 
