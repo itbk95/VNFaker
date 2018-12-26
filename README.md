@@ -103,7 +103,7 @@ vnfaker()->file($name = null, $extentions = 'png', $width = 100, $height = 100, 
 #### `More`
 
 ```php
-vnfaker()->company(); //
+vnfaker()->company(); // Tập Đoàn Vingroup
 vnfaker()->gender(); // Nam | Nữ
 vnfaker()->array_rand(array $items, $num = 1, $array = false, $glue = ',');
 ```

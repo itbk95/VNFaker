@@ -11,6 +11,7 @@ class VNFaker
 	const FILE_LAST_NAME       = 'lastname.txt';
 	const FILE_MID_NAME        = 'midname.txt';
 	const FILE_CITY            = 'city.txt';
+	const FILE_COMPANY         = 'company.txt';
 
 	const FOLDER_PHONE         = 'phone';
 	const FILE_MOBILE_PHONE    = 'mobile.txt';
@@ -229,7 +230,8 @@ class VNFaker
 	* COMPANY
 	*/
 	public static function company() {
-
+		$items = self::readfile(self::FILE_COMPANY);
+		return self::array_rand($items);
 	}
 
 	public static function gender() {
