@@ -301,19 +301,21 @@ class VNFaker
 	/*
 	* TEXT - STRING
 	*/
-	public static function paragraphs($paragraph = 1, $wordInPara = 50) {
-		$paragraphs = self::readfile(self::FOLDER_STRING.'/'.self::FILE_PARAGRAPH);
-		return self::array_rand($paragraphs);
+	public static function paragraphs(int $paragraph = 1, bool $array = false, $glue = '<br>') {
+		return self::typeString(self::FILE_PARAGRAPH, $paragraph, $array, $glue);
 	}
 
-	public static function words($word = 1) {
-		$words = self::readfile(self::FOLDER_STRING.'/'.self::FILE_WORD);
-		return self::array_rand($words);
+	public static function words(int $word = 1, bool $array = false, $glue = ', ') {
+		return self::typeString(self::FILE_WORD, $word, $array, $glue);
 	}
 
-	public static function sentences($sentence = 1) {
-		$sentences = self::readfile(self::FOLDER_STRING.'/'.self::FILE_SENTENCE);
-		return self::array_rand($sentences);
+	public static function sentences(int $sentence = 1, bool $array = false, $glue = '. ') {
+		return self::typeString(self::FILE_SENTENCE, $sentence, $array, $glue);
+	}
+
+	private static function typeString($file_name, int $number, bool $array, $glue) {
+		$items = self::readfile(self::FOLDER_STRING.'/'.$file_name);
+		return self::array_rand($items, $number, $array, $glue);
 	}
 
 	/*

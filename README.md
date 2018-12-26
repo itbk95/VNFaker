@@ -79,9 +79,9 @@ vnfaker()->generateOrderNo($length = 6, $prefix = null, $postfix = null, $number
 #### `String`
 
 ```php
-vnfaker()->paragraphs($paragraph = 1, $wordInPara = 50);
-vnfaker()->words($word = 1);
-vnfaker()->sentences($sentence = 1);
+vnfaker()->paragraphs(int $paragraph = 1, bool $array = false, $glue = '<br>'); // Tình yêu đến em không mong đợi gì. Tình yêu đi em không hề hối tiếc.
+vnfaker()->words(int $word = 2, bool $array = false, $glue = ', '); // Bùi, Huy
+vnfaker()->sentences(int $sentence = 1, bool $array = false, $glue = '. '); // Tình yêu đến em không mong đợi gì
 vnfaker()->vnToString($str = "Bùi Huy Cường"); // Bui Huy Cuong
 vnfaker()->str_clean($string, $remove_space = false); // remove all special characters
 ```
