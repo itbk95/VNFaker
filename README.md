@@ -54,10 +54,11 @@ vnfaker()->fixedLineNumber($numbers = 12); // 0248584903
 vnfaker()->cityphone($numbers = 12); // 0240897395 (Ha Noi)
 ```
 
-#### `Email`
+#### `Email, username`
 
 ```php
 vnfaker()->email(array $domain); //default: ['gmail.com', 'outlook.com', 'example.com'] -> buihuycuong@gmail.com
+vnfaker()->username(); // buihuycuong
 ```
 
 #### `Number`

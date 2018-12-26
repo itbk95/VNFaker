@@ -236,6 +236,10 @@ class VNFaker
 		return self::array_rand(['nam', 'nữ']);
 	}
 
+	public static function username() {
+		return strtolower(self::str_clean(self::vnToString(self::fullname()), true));
+	}
+
 	public static function email(array $domain = []) {
 		$email  = '@';
 		if(!$domain) {
@@ -243,7 +247,7 @@ class VNFaker
 		}
 		$email .= self::array_rand($domain);
 
-		return strtolower(self::str_clean(self::vnToString(self::fullname()), true).$email);
+		return strtolower(self::username().$email);
 	}
 
 	public static function vnToString($str){
