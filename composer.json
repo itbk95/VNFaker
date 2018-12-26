@@ -35,9 +35,6 @@
         "psr-4": {
             "Buihuycuong\\Vnfaker\\": "src"
         },
-        "branch-alias": {
-            "dev-master": "v1.0"
-        },
          "files": [
              "src/helpers.php"
          ]
