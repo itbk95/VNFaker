@@ -60,7 +60,7 @@ class VNFaker
 			}
 			return implode($glue, $return_value);
 		}
-		return $items[array_rand($items)];
+		return mb_convert_encoding($items[array_rand($items)], "UTF-8");
 	}
 
 	/**
