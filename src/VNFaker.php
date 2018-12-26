@@ -174,7 +174,7 @@ class VNFaker
 	/*
 	* Make order id or suk, uuid
 	*/
-	public static function generateOrderNo($length = 6, $numbers = false, $letters = false, $uppercase = false, $lowercase = false)
+	public static function generateOrderNo($length = 6, $prefix = null, $postfix = null, $numbers = false, $letters = false, $uppercase = false, $lowercase = false)
 	{
 	    $token          = "";
 	    $codeAlphabet   = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -182,11 +182,15 @@ class VNFaker
 	    $codeAlphabet  .= "0123456789";
 	    $max            = strlen($codeAlphabet);
 
-	    for ($i = 0; $i < $length; $i++) {
-	        $token .= $codeAlphabet[random_int(0, $max - 1)];
+	    $length = ($length - (strlen($prefix) + strlen($postfix)));
+
+	    if($length > 0) {
+	    	for ($i = 0; $i < $length; $i++) {
+	    	    $token .= $codeAlphabet[random_int(0, $max - 1)];
+	    	}
 	    }
 
-	    return $token;
+	    return $prefix.$token.$postfix;
 	}
 
 	/*
@@ -297,17 +301,17 @@ class VNFaker
 	/*
 	* TEXT - STRING
 	*/
-	public static function paragraphs($paragraphs = 1, $wordInPara = 50) {
+	public static function paragraphs($paragraph = 1, $wordInPara = 50) {
 		$paragraphs = self::readfile(self::FOLDER_STRING.'/'.self::FILE_PARAGRAPH);
 		return self::array_rand($paragraphs);
 	}
 
-	public static function words($words = 10) {
+	public static function words($word = 1) {
 		$words = self::readfile(self::FOLDER_STRING.'/'.self::FILE_WORD);
 		return self::array_rand($words);
 	}
 
-	public static function sentences($sentences = 1) {
+	public static function sentences($sentence = 1) {
 		$sentences = self::readfile(self::FOLDER_STRING.'/'.self::FILE_SENTENCE);
 		return self::array_rand($sentences);
 	}

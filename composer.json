@@ -1,7 +1,7 @@
 {
     "name": "buihuycuong/vnfaker",
-    "description": "VNFaker is a Laravel library that generates fake data about name, city, address, phone,... in Viet Nam",
-    "type": "library",
+    "description": "VNFaker is a Laravel package that generates fake data about name, city, address, phone,... in Viet Nam",
+    "type": "package",
     "keywords": [
       "vnfaker",
       "data",

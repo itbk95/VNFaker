@@ -73,15 +73,15 @@ vnfaker()->boolean($string = true); // true|false : 1|0
 #### `OrderNo`
 
 ```php
-vnfaker()->generateOrderNo($length = 6, $numbers = false, $letters = false, $uppercase = false, $lowercase = false); // DHF3K8
+vnfaker()->generateOrderNo($length = 6, $prefix = null, $postfix = null, $numbers = false, $letters = false, $uppercase = false, $lowercase = false); // DHF3K8
 ```
 
 #### `String`
 
 ```php
-vnfaker()->paragraphs($paragraphs = 1, $wordInPara = 50);
-vnfaker()->words($words = 10);
-vnfaker()->sentences($sentences = 1);
+vnfaker()->paragraphs($paragraph = 1, $wordInPara = 50);
+vnfaker()->words($word = 1);
+vnfaker()->sentences($sentence = 1);
 vnfaker()->vnToString($str = "Bùi Huy Cường"); // Bui Huy Cuong
 vnfaker()->str_clean($string, $remove_space = false); // remove all special characters
 ```
