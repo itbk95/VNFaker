@@ -14,7 +14,7 @@ class VNFakerServiceProvider extends ServiceProvider
     public function boot()
     {
         require __DIR__.'/routes/routes.php';
-        require __DIR__.'/helpers.php';
+        // require __DIR__.'/helpers.php';
     }
 
     /**

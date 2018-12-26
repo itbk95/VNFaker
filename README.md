@@ -1,11 +1,21 @@
 # VNFaker
 
-VNFaker là thư viện tạo dữ liệu fake với dữ liệu ở Việt Nam như: tên, số điện thoại, địa chỉ, thành phố, thời gian ...
+VNFaker is a Laravel library that generates fake data about name, city, address, phone, datetime,... in Viet Nam.
 
 ### Require
-
+- VNFaker requires PHP >= 5.3.3
 ### Table of Contents
 
 ### Installation
+```sh
+composer require buihuycuong/vnfaker
+```
+### Basic Usage
 
-### ## Basic Usage
+#### Name
+
+#### Time
+
+#### Address
+
+#### Phone
