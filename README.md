@@ -54,6 +54,12 @@ vnfaker()->fixedLineNumber($numbers = 12); // 0248584903
 vnfaker()->cityphone($numbers = 12); // 0240897395 (Ha Noi)
 ```
 
+#### `Email`
+
+```php
+vnfaker()->email(array $domain); //default: ['gmail.com', 'outlook.com', 'example.com'] -> buihuycuong@gmail.com
+```
+
 #### `Number`
 
 ```php
@@ -76,6 +82,8 @@ vnfaker()->generateOrderNo($length = 6, $numbers = false, $letters = false, $upp
 vnfaker()->paragraphs($paragraphs = 1, $wordInPara = 50);
 vnfaker()->words($words = 10);
 vnfaker()->sentences($sentences = 1);
+vnfaker()->vnToString($str = "Bùi Huy Cường"); // Bui Huy Cuong
+vnfaker()->str_clean($string, $remove_space = false); // remove all special characters
 ```
 
 #### `Color`
