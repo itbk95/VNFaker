@@ -3,7 +3,8 @@
 VNFaker is a Laravel package that generates fake data about name, city, address, phone, datetime,... in Viet Nam.
 
 ### Require
-- VNFaker requires PHP >= 5.3.3
+- PHP >= 5.3.3
+- Laravel >= 5.0
 
 ### Installation
 
@@ -97,7 +98,7 @@ vnfaker()->colorName(); // red
 #### `File`
 
 ```php
-vnfaker()->file($name = null, $extentions = 'png', $width = 100, $height = 100, $mimeType = 'image'); // abc.png
+vnfaker()->file($name = null, array $extentions = ['png', 'jpg'], $width = 100, $height = 100, $mimeType = 'image'); // avatar.png
 ```
 
 #### `More`

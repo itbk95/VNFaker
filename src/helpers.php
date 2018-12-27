@@ -1,7 +1,9 @@
 <?php
 use Buihuycuong\Vnfaker\VNFaker;
 /** @return Buihuycuong\Vnfaker\VNFaker; */
-function vnfaker(): VNFaker
-{
-    return app(VNFaker::class);
+if (! function_exists('vnfaker')) {
+	function vnfaker(): VNFaker
+	{
+	    return app(VNFaker::class);
+	}
 }

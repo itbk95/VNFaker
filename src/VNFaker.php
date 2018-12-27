@@ -61,7 +61,7 @@ class VNFaker
 			}
 			return implode($glue, $return_value);
 		}
-		return mb_convert_encoding($items[array_rand($items)], "UTF-8");
+		return mb_convert_encoding(trim($items[array_rand($items)]), "UTF-8");
 	}
 
 	/**
@@ -340,8 +340,8 @@ class VNFaker
 	/*
 	* file
 	*/
-	public static function file($name = null, $extentions = 'png', $width = 100, $height = 100, $mimeType = 'image') {
-
+	public static function file($name = null, array $extentions = ['png', 'jpg'], $width = 100, $height = 100, $mimeType = 'image') {
+		return self::generateOrderNo().'.'.self::array_rand($extentions);
 	} 
 
 
